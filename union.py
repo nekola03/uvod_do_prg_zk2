@@ -6,7 +6,7 @@ def listNumber(seq):
         try:
             listNum.append(float(seqSplit[i])) #convert to float
         except ValueError:
-            print("Špatný formát čísla na pozici", i + 1, "a proto bylo vynecháno.") #value skip in case of wrong format
+            print("Wrong number format at position", i + 1, ", it is reason, why it doesn't used in calculation.") #value skip in case of wrong format
     return listNum
 
 #FUNCTION FOR ASCENDING SORTING OF LIST VALUE
@@ -56,9 +56,9 @@ def unionFunction(list1,list2):
     return out
 
 #INPUT AND SORT LIST
-firstSeq = input("Zadej 1. posloupnost čísel oddělených mezerami: ")
+firstSeq = input("Input first sequence of numbers separated by spaces: ")
 listFirst = sortASC(listNumber(firstSeq))
-secondSeq = input("\nZadej 2. posloupnost čísel oddělených mezerami: ")
+secondSeq = input("\nInput second sequence of numbers separated by spaces: ")
 listSecond = sortASC(listNumber(secondSeq))
 
 #UNION
@@ -66,7 +66,7 @@ res1 = unionFunction(listFirst, listSecond)
 
 #OUTPUT
 if (len(res1) == 0):
-    print("\nBohužel jsi zadal dvě prázdné množiny či množiny ve špatném formátu.")
+    print("\nI am sorry, but you inputed two empty sequences.")
 else:
-    print("\nSjednocením je:", *res1, sep = ' ') #remove brackets from list and make space as separator
+    print("\nUnion is:", *res1, sep = ' ') #remove brackets from list and make space as separator
      
